@@ -1,0 +1,32 @@
+<% include ./partials/header.ejs %>
+
+<div id="main" class="d-flex">
+	
+	<div id="left">
+		<img src="../images/Linkedin-Logo-removebg-preview.png" alt="">
+		<p>Welcome to your <br> professional community</p>
+		<form action="/login" method="post">
+			<input type="text" name="username" placeholder="Email or phone number">
+			<br>
+			<input class="mt-3" name="password" type="password" placeholder="Password">
+			<br>
+			<br>
+			<a href="/forgotpass">Forgot password?</a>
+			<br>
+			<input class="btn btn-primary rounded-pill" type="submit" value="Sign in">
+		</form>
+		<hr>
+		<a id="google" class="btn btn-secondary rounded-pill" href="">Sign in with Google</a>
+	</div>
+	<div id="right">
+		<div id="movergt">
+			<a class="btn" href="/register">Join now</a>
+			<a id="signinbtn" class="btn btn-primary rounded-pill" href="">Sign in</a>
+		</div>
+		<br>
+		<img src="../images/homepage.svg" alt="">
+	</div>
+	
+</div>
+
+<% include ./partials/footer.ejs %>

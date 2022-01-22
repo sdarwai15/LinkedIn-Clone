@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Linkedin</title>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../images/icon.jpg" type="image/icon type">
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+	<link rel="stylesheet" href="../stylesheets/profile.css">
+	<title> title </title>
+	
+</head>
+
+<body>
+	
+	<div id="main">
+		<div id="nav">
+			<div id="center">
+				<div id="left">
+					<img src="/images/LI-In-Bug.png" alt="">
+					
+					<div id="inputField">
+						<i class="ri-search-2-line"></i>
+						<form action="#">
+							<input id="search" type="text" placeholder="Search">
+						</form>
+					</div>
+					
+				</div>
+				<div id="right">
+					<div class="tags" id="home">
+						<a href="/feed"><i class="ri-home-4-fill"></i></a>
+						<h5>Home</h5>
+					</div>
+					
+					<div class="tags" id="home">
+						<a href="#"><i class="ri-group-line"></i></a>
+						<h5>Networks</h5>
+					</div>
+					
+					<div class="tags" id="home">
+						<a href="#"><i class="ri-briefcase-2-fill"></i></a>
+						<h5>Jobs</h5>
+					</div>
+					
+					<div class="tags" id="home">
+						<a href="#"><i class="ri-message-2-line"></i></a>
+						<h5>Messages</h5>
+					</div>
+					
+					<div class="tags" id="home">
+						<a href="#"><i class="ri-notification-3-fill"></i></a>
+						<h5>notifications</h5>
+					</div>
+					
+					<a href="/logout"><button>Logout</button></a>
+				</div>
+			</div>
+		</div>
+		
+		<div id="profileTopBox">
+			<div id="backgroundImg">
+				<a href="#">
+					<div id="uploadImg"><i class="ri-camera-2-fill"></i></div>
+				</a>
+				
+				<form action="/user/profile/setprofileimage" enctype="multipart/form-data" method="post">
+					<div id="profileImg">
+						<img src="../images/uploads/<%= foundUser.profileimg %>" alt="">
+						<input type="file" id="profileimg" name="profileimg" onchange="this.form.submit();" hidden />
+						<label id="uploaddp" for="profileimg">🖋️</label>
+					</div>
+				</form>
+				
+			</div>
+			<div id="Details">
+				<h3 id="username"><%=foundUser.username%></h3>
+				<%if(true){%>
+				<h4 id="headline">Student at <%=foundUser.college%></h4>
+				<%}%>
+        
+        <div id="locationField">
+        <h4 id="location"><%=foundUser.location%></h4>
+				<a class="link" id="contactInfo" href="#">Contact Info</a>
+			</div>
+			<a class="link" id="connection" href="#">0 connections</a>
+			
+			<a href="#">
+				<div id="openTo">Open To</div>
+			</a>
+		</div>
+		
+		<div id="openToWork">Open To Work!</div>
+	</div>
+	
+	<div id="dashboard">
+		<h2>Your Dashboard</h2>
+		<div id="box">
+			<div class="a" id="profileViews">
+				<h1>0</h1>
+				<h3>Who viewed your profile</h3>
+			</div>
+			<div class="a" id="postViews">
+				<h1>0</h1>
+				<h3>Post views</h3>
+			</div>
+			<div class="a" id="searchAppearaces">
+				<h1>0</h1>
+				<h3>Search Appearances</h3>
+			</div>
+		</div>
+	</div>
+	
+	<div id="activity">
+		<h3>Activity</h3>
+		<h2>0 followers</h2>
+		<%if(foundUser.usersPost.length == 0){%>
+		<h2 style="color: black; font-weight: 100; margin-top: 20px;">Posts you created, shared, or commented on in the last 90 days are displayed here.</h2>
+		<%}else{%>
+		<h2>Posts</h2>
+		<%}%>
+    
+        
+
+        <div id="seeAllActivity"><a id="all" href="#">See All Activity</a></div>
+    </div>
+
+        
+    <div id="rightDiv">
+        <div class="b" id="PeopleAlsoViewed">
+           <div class="k">
+            <h3>People Also Viewed</h3>
+           </div>
+            
+            <div class="btm">
+                
+                <a href="#"><h2>Show All</h2></a>
+            </div>
+        </div>
+        <div class="b" id="PeopleYouMayKnow">
+            <h3>People You May Know</h3>
+            <div class="k">
+                <%count = 0%>
+		
+	</div>
+	
+	<div class="btm">
+		<a href="#">
+			<h2>Show All</h2>
+		</a>
+	</div>
+	</div>
+	</div>
+	
+	<div id="bottomLinks"></div>
+	</div>
+	
+	<script>
+		var searchBar = document.querySelector("#inputField");
+		var searchInput = document.querySelector("#search");
+		var left = document.querySelector("#left");
+		
+		searchBar.addEventListener("click", function() {
+			searchInput.focus();
+			searchInput.style.outline = "none";
+			searchInput.style.border = "none";
+			left.style.width = "35%"
+		})
+		
+		document.addEventListener("click", function(event) {
+			console.log(event.target.id)
+			if (event.target.id !== "search") {
+				left.style.width = "28%"
+				
+			}
+		})
+		
+		var openTo = document.querySelector("#openTo");
+		var openToWork = document.querySelector("#openToWork");
+		var flag = 0;
+		openTo.addEventListener("click", function() {
+			if (flag === 0) {
+				openToWork.style.display = "initial"
+				openTo.style.backgroundColor = "#004182";
+				openTo.style.color = "white";
+				flag = 1;
+			} else {
+				openToWork.style.display = "none"
+				flag = 0;
+				openTo.style.backgroundColor = "white";
+				openTo.style.color = "grey";
+			}
+			
+		})
+	</script>
+</body>
+
+</html>

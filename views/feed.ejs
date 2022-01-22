@@ -1,0 +1,248 @@
+<% include ./partials/header.ejs %>
+
+<div class="card news mt-5 mx-4" style="width: 16rem;">
+	
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light ">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"><img src="../images/icon.jpg" alt=""></a>
+		<form class="d-flex">
+			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-primary" type="submit">Search</button>
+		</form>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li id="marleft" class="nav-item d-flex flex-column align-items-center">
+					<a class="nav-link active" aria-current="page" href="#">
+						<div class="icon flex"><img class="img" style="opacity: 1;" src="../images/home.png" alt=""></div>
+						<div class="hometxt flex">Home</div>
+						<hr>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="/mynetwork">
+						<div class="icon connections flex"><img class="img" src="../images/connections.png" alt=""></div>
+						<div class="conntxt flex ">My Network</div>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mrlft" aria-current="page" href="/jobs">
+						<div class="icon flex jobs"><img class="img" src="../images/jobs.png" alt=""></div>
+						<div class="hometxt flex ">Jobs</div>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="#">
+						<div class="icon msg flex"><img class="img" src="../images/msg.png" alt=""></div>
+						<div class="hometxt flex ">Messaging</div>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link notifications" aria-current="page" href="#">
+						<div class="icon notif flex"><img class="img" src="../images/notification.png" alt=""></div>
+						<div class="hometxt flex ">Notifications</div>
+					</a>
+				</li>
+				<div class="dropdown">
+					
+					<a href="" class="nav-link ">
+						<img id="me" class="img" src="../images/uploads/<%= user.profileimg %>" alt="pic">
+						<br>
+						Me
+					</a>
+					<div id="abs">
+						<div class="dropdown-content">
+							<a href="/user/profile">
+								<div id="profile">
+									<div id="dp">
+										<img src="../images/uploads/<%= user.profileimg %>" alt="">
+									</div>
+									<div id="dets">
+										<h6 style="font-size: 18px; letter-spacing: 0.8px;"><%=user.name%></h6>
+										<p><%=user.description%></p>
+										<div class="btn rounded-pill" id="signinbtn">View Profile</div>
+									</div>
+								</div>
+							</a>
+							<hr>
+							<div id="scnd">
+								<h6>Account</h6>
+								<a href="">Settings & Privacy</a>
+								<a href="">Help</a>
+								<a href="">Language</a>
+								<a href="/logout" id="lh">Sign Out</a>
+							</div>
+							<hr>
+							<div id="third">
+								<h6>Manage</h6>
+								<a href="">Posts & Activity</a>
+								<a href="">Job Posting Account</a>
+							</div>
+							<hr>
+							
+						</div>
+					</div>
+				</div>
+			</ul>
+			
+		</div>
+	</div>
+</nav>
+
+<div id="forflex" style="padding-top: 30px; ">
+	
+	<div class="card profilecard " style="width: 13rem; position: fixed;">
+		<img src="../images/banner.jpg" class="card-img-top banner" alt="banner">
+		<a href="/user/profile">
+			<img src="../images/uploads/<%= user.profileimg %>" class="card-img-top profilepic" alt="profilepic"></a>
+		<div class="card-body">
+			<%if(user.isadmin!==true){%>
+			<a href="/user/profile">
+				<h5 class="card-title"><%=user.name%></h5>
+			</a>
+			<%}else{%>
+			<a href="/profile">
+				<h5 class="card-title"><%=user.username%></h5>
+			</a>
+			
+			<%}%>
+			<p class="card-text"><%=user.headline%></p>
+			<hr>
+			<div id="second">
+				<p style="text-align: justify; color: rgb(88, 88, 88);line-height: 14px">Who viewed your profile <span style="color: rgb(49, 104, 255);  margin-left: 70px; margin-top: 20px;line-height: 30px;">15</span></p>
+				<p style="text-align: justify; color: rgb(88, 88, 88); line-height: 13px;">Views of your post <span style="color: rgb(49, 104, 255);  margin-left: 70px; margin-top: 20px; line-height: 30px;">15</span></p>
+				<%if(user.isadmin===true){%>
+				<a href="/postjob">Create job post</a>
+				<%}%>
+				
+			</div>
+			<hr>
+			<a style="text-align: left;" href="">
+				<p style="color: rgb(88, 88, 88);line-height: 20px">Access exclusive tools & insights</p>
+				<p style="line-height: 20px;"><strong>🔲 Try Premium for free</strong></p>
+			</a>
+			<hr>
+			<a style="text-align: left;line-height: 12px;" href="">
+				<p>🔖<strong> My items </strong></p>
+			</a>
+		</div>
+	</div>
+	
+	<div id="posts" style="margin-top: 30px;">
+		
+		<div class="card createPost mx-5" >
+			<img src="../images/uploads/<%= user.profileimg %>" class="card-img-top profilepic" alt="profilepic">
+				<div id="post" class="rounded-pill" style="border: 1.5px solid #a7a7a7;padding: 10px 20px;width: 80%; margin-left: 85px; margin-top: 19px; color: #646464;">Start a Post</div>
+				<div id="btns" style="display: flex;">
+					<button type="button" class="btn btn-light"><img src="../images/photo-icon.png" alt=""> Photo</button>
+					<button type="button" class="btn btn-light"><img src="../images/video-icon.png" alt=""> Video</button>
+					<button type="button" class="btn btn-light">📆 &nbsp;&nbsp; Event</button>
+					<button type="button" id="articlebtn" class="btn btn-light">📰&nbsp;&nbsp; Write Article</button>
+				</div>
+			</div>
+			<%allPosts.forEach(function(elem){%>
+			<%if(elem.imageurl==null){%>
+			<div class="card post mt-5 mx-5" style="width: 30rem;  position: relative;">
+				<img src="../images/uploads/<%= user.profileimg %>" class="card-img-top profilepic" alt="profilepic">
+				<a href="/user/profile>" style="text-decoration: none; color: black;">
+					<h5 style="margin-left: 85px; margin-top: 19px;"><%=user.name%></h5>
+				</a>
+				<p style="margin-left: 85px; margin-top: -5px;"><%=user.headline%></p>
+				<p style="margin-left: 28px; margin-top: 45px; margin-right: 15px; color: black;"><%=elem.postcontent%></p>
+				<div id="actions" style="margin-top: 45px;">
+					<a href="/like/<%= elem._id %>">
+						<button type="submit" class="btn btn-primary" style="position: absolute;">
+							<%= elem.likes.length %> Like
+						</button>
+					</a>
+					<form action="/comment/<%= elem._id %>" method="post">
+						<input type="text" name="comment" class="form-control" style="margin-top: 0px; margin-left: 63px; width: 60%;" placeholder="Write your comment here">
+						<button type="submit" class="btn btn-primary" style="position: absolute;right: 0%; bottom: 0%;">Post Comment</button>
+					</form>
+				</div>
+				<h6 class="mt-3">&nbsp; Comments :</h6>
+				
+				<% if(elem.comments.length > 0){ %>
+				<% forComment.forEach(function(cmnt){ %>
+				<h6><%= cmnt.user %></h6>
+				<p><%= cmnt.text %></p>
+				<% }) %>
+				<% } %>
+			</div>
+			<%}else{%>
+			
+			<div class="card post mt-5 mx-5" style="width: 30rem; position: relative;">
+				<div id="con1"><img src="../images/uploads/<%= user.profileimg %>" class="card-img-top profilepic" alt="profilepic">
+					<a href="/user/profile>" style="text-decoration: none; color: black;">
+						<h5 style="margin-left: 85px; margin-top: 19px;"><%=user.name%></h5>
+					</a>
+					<p style="margin-left: 85px; margin-top:-2px;"><%=user.headline%></p>
+				</div>
+				
+				<div id="imgcard" style="width: 100%; height: 20rem; background-position: center;">
+					<p style="margin-left: 28px; margin-top: 2px; margin-right: 5px; color: black;"><%=elem.postcontent%> </p>
+					<img src="../images/uploads/<%=elem.imageurl%>" style="width: 100%; height: 100%; object-fit: cover; background-position: center;" alt="">
+				</div>
+				<br>
+				<div id="actions" style="margin-top: 45px;">
+					<a href="/like/<%= elem._id %>">
+						<button type="submit" class="btn btn-primary" style="position: absolute;">
+							<%= elem.likes.length %> Like
+						</button>
+					</a>
+					<form action="/comment/<%= elem._id %>" method="post" style="display: flex;">
+						<input type="text" name="comment" class="form-control" style="margin-top: 0px; margin-left: 63px; width: 60%;" placeholder="Write your comment here">
+						<button type="submit" class="btn btn-primary">Post Comment</button>
+					</form>
+				</div>
+				
+				<h6 class="mt-3">&nbsp; Comments :</h6>
+				
+				<% if(elem.comments.length > 0){ %>
+				<% forComment.forEach(function(cmnt){ %>
+				<h6><%= cmnt.user %></h6>
+				<p><%= cmnt.text %></p>
+				<% }) %>
+				<% } %>
+				
+			</div>
+			
+			<%}%>
+
+
+		<%})%>
+			
+			
+			
+			
+		</div>
+		<div id="postbox" style="width: 40rem; height: 45vh; background-color: #d6d6d6	; position: absolute; top: 45% ; left:50%; transform: translate(-50%,-50%); border-radius: 15px; display: none; padding: 20px 30px;">
+			<form action="/createpost" enctype="multipart/form-data" method="post">
+				<input type="text" name="postcontent" placeholder="create your post here" style="width: 100%; height:20vh;border-radius: 10px; border:2px solid rgb(94, 94, 224); padding-left: 20px;">
+				<input type="file" name="imageurl" style="margin-top: 12px;">
+				<input type="submit" value="Post" style="margin-top: 60px; border: 1px solid rgb(94, 94, 224); border-radius: 100px;width: 90px;; font-size: 17px ; display: flex ;justify-content: center; align-items: center; padding: 4px 10px;">
+				
+			</form>
+			
+			
+		</div>
+		
+	</div>
+	<script>
+		var flag = 0;
+		var profile = document.querySelector('#posts')
+		profile.addEventListener('click', function(dets) {
+			if (flag === 0) {
+				document.querySelector('#postbox').style.display = "initial";
+				flag = 1
+			} else {
+				document.querySelector('#postbox').style.display = "none";
+				flag = 0
+			}
+			
+			
+		})
+	</script>
+	
+	<% include ./partials/footer.ejs %>

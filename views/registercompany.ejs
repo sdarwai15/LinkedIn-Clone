@@ -1,0 +1,52 @@
+<% include ./partials/header.ejs %>
+
+<div id="registerbox">
+	<nav style="width: 100%;height: 80px; background:#FFFFFF;">
+		<div style="width: 60%;height: 100%; margin-left: 30px;">
+			
+			<img style="height: 100%;" src="../images/download.png" alt="">
+			
+		</div>
+		
+	</nav>
+	<div id="companyformdiv">
+		<h3 id="head2" style='text-align: center; color: rgb(52, 52, 190); font-size: 29px;'>Company registration</h3>
+		<form action="/register/company" method="post">
+			<input type="text" name="username" placeholder="enter your company name">
+			<br>
+			<select id="job" name="industrydomain" aria-placeholder="select your domain" style="margin-top: 10px
+;width: 100%; border-radius: 6px; font-size: 17px; font-weight: 200;">
+				<option value="none">Select your domain</option>
+				
+				<option value="IT and Services">IT and Services</option>
+				<option value="Marketing and Sales">Marketing and Sales</option>
+				<option value="Health and Services"> Health and Services</option>
+				<option value="Education and Technology">Education and Technology </option>
+				<option value="financial and Technology">financial and Technology </option>
+				<option value="Transport and Services">Transport and Services </option>
+				
+				
+			</select>
+			<br>
+			<input type="email" name="email" placeholder="enter your email">
+			<br>
+			<input type="text" name="location" placeholder="enter company location    city, state ,country">
+			<br>
+			<input type="password" name="password" placeholder="enter your password">
+			<br>
+			<input type="text" name="websiteurl" placeholder="enter your  websiteurl">
+			<br>
+			<input type="number" name="contact" placeholder="enter your contact">
+			<br>
+			<input type="text" name="headline" placeholder="enter company headline">
+			<br>
+			<input type="submit" value="Register" style="background-color: rgb(82, 80, 212); width: 100%; text-align: center;color: white;">
+		</form>
+	</div>
+</div>
+
+
+
+
+
+<% include ./partials/footer.ejs %>

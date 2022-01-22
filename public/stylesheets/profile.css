@@ -1,0 +1,423 @@
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100vh;
+	width: 100%;
+}
+
+#main {
+	border-top: 1px solid transparent;
+	min-height: 100vh;
+	width: 100%;
+	background-color: #f3f2ef;
+}
+
+#nav {
+	height: 8vh;
+	width: 100%;
+	background-color: #fff;
+	position: fixed;
+	top: 0%;
+	z-index: 999999;
+}
+
+#center {
+	padding-right: 10px;
+	height: 100%;
+	width: 73%;
+	margin-left: 2%;
+	justify-content: space-between;
+	display: flex;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+
+#nav #center #left {
+	display: flex;
+	padding: 3px;
+	height: 100%;
+	width: 28%;
+	margin-left: 10%;
+	transition: width 0.3s;
+	/* background-color: burlywood; */
+}
+
+#left img {
+	height: 5vh;
+	margin-top: 8px;
+}
+
+#left input {
+	border: 1px solid transparent !important;
+}
+
+#left #inputField {
+	margin-top: 10px;
+	margin-left: 10px;
+	display: flex;
+	height: 5vh;
+	width: 100%;
+	font-size: 25px;
+	outline: none;
+	background-color: #eef3f8;
+	border-radius: 3px;
+	overflow: hidden;
+	border: 1px solid transparent;
+}
+
+#inputField input {
+	font-family: product sans;
+	margin-left: 10px;
+	height: 100%;
+	width: 100%;
+	font-size: 15px;
+	outline: none;
+	background-color: #eef3f8;
+	border-radius: 3px;
+	border: 1px solid transparent;
+}
+
+#inputField i {
+	font-size: 20px;
+	margin-top: 5px;
+	margin-left: 5px;
+	color: grey;
+}
+
+#right {
+	display: flex;
+	width: 50%;
+	margin-top: 10px;
+	font-size: 30px;
+}
+
+#right i {
+	text-align: center;
+	margin-right: 40px;
+	font-size: 24px;
+	color: rgb(70, 70, 70);
+}
+
+.tags i {
+	margin-left: 10px;
+}
+
+.tags h5 {
+	font-family: product sans;
+	font-size: 13px;
+	font-weight: 100;
+	color: rgb(70, 70, 70);
+	line-height: 0px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+a:hover i {
+	color: rgb(0, 0, 0) !important;
+}
+
+.tags:hover h5 {
+	color: rgb(0, 0, 0) !important;
+}
+
+
+
+#uploaddp{
+	position: absolute;
+	bottom: 5%;
+	right: 5%;
+	border-radius: 50%;
+	padding: 6px;
+	background-color: rgb(68, 77, 85);
+	z-index: 99;
+}
+
+#profileTopBox {
+	margin-top: 6%;
+	margin-left: 13%;
+	min-height: 70vh;
+	width: 50%;
+	background-color: rgb(255, 255, 255);
+	/* position: absolute;
+    top: 12%;
+    left: 13%; */
+	border-radius: 10px;
+	overflow: hidden;
+	position: relative;
+}
+
+#backgroundImg {
+	height: 26vh;
+	width: 100%;
+	background-color: violet;
+	position: relative;
+	background-image: url(/images/LinkedIn-Default-Background-2020-.png);
+	background-size: cover;
+}
+
+#uploadImg {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	font-size: 15px;
+	top: 5%;
+	right: 3%;
+	height: 25px;
+	width: 25px;
+	background-color: #fff;
+}
+
+#profileImg {
+	height: 160px;
+	width: 160px;
+	position: absolute;
+	top: 40%;
+	border-radius: 50%;
+	left: 5%;
+	background-color: aqua;
+	background-image: url(/images/default-profile-pic.jpg);
+	background-size: cover;
+	background-position: center;
+	/* overflow: hidden; */
+}
+
+#profileImg img{
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+#Details {
+	position: absolute;
+	top: 48%;
+	left: 4%;
+	font-weight: 100;
+}
+
+#username {
+	font-weight: 500;
+	font-size: 30px;
+	font-family: product sans;
+}
+
+#headline {
+	font-weight: 100;
+	font-family: product sans;
+	margin-bottom: 5px;
+	width: 80%;
+	color: rgb(85, 85, 85);
+}
+
+#location {
+	font-weight: 100;
+	font-size: 14px;
+	font-family: product sans;
+	color: rgb(141, 141, 141);
+}
+
+.link {
+	color: blue;
+	font-family: product sans;
+	font-size: 14px;
+}
+
+#locationField {
+	display: flex;
+}
+
+.link:nth-child(2) {
+	margin-left: 10px;
+}
+
+#connection {
+	line-height: 50px;
+}
+
+#openTo {
+	height: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40%;
+	color: grey;
+	border-radius: 60px;
+	border: 1px solid grey;
+	background-color: rgb(255, 255, 255);
+}
+
+#work {
+	position: absolute;
+	bottom: 10%;
+}
+
+#openToWork {
+	font-family: product sans;
+	margin-top: 4% !important;
+	margin-left: 26%;
+	color: #2174c7;
+	display: none;
+}
+
+#dashboard {
+	padding: 30px;
+	/* position: absolute; */
+	/* top: 85vh; */
+	/* left: 13%; */
+	color: grey;
+	font-family: product sans;
+	font-weight: 100;
+	margin-top: 20px;
+	margin-left: 13%;
+	min-height: 30vh;
+	width: 50%;
+	background-color: #dce6f1;
+	position: relative;
+}
+
+#dashboard h2 {
+	font-size: 20px;
+	font-weight: 100;
+	color: grey;
+	font-family: product sans;
+}
+
+#box {
+	height: 20vh;
+	width: 95%;
+	border-radius: 20px;
+	margin: 10px auto;
+	background-color: #fff;
+	display: flex;
+	overflow: hidden;
+	border: 1px solid grey;
+}
+
+.a {
+	border: 1px solid grey;
+	padding: 10px;
+	width: 35%;
+	height: 100%;
+}
+
+.a h1 {
+	font-weight: 100;
+	color: #2174c7;
+}
+
+#activity {
+	font-family: product sans;
+	padding: 30px;
+	height: 50vh;
+	width: 50%;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-left: 13%;
+	background-color: #fff;
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+#activity h2 {
+	font-size: 15px;
+	letter-spacing: 1px;
+	color: #2174c7;
+}
+
+#seeAllActivity {
+	padding: 10px;
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	border-top: 1px solid grey;
+	height: 8vh;
+	width: 100%;
+	background-color: rgb(255, 255, 255);
+}
+
+#all {
+	margin-left: 40%;
+	color: #2174c7;
+}
+
+#bottomLinks {
+	height: 30vh;
+	width: 80%;
+	margin-top: 20px;
+	margin-left: 13%;
+	background-color: #f3f2ef;
+}
+
+#rightDiv {
+	min-height: 100vh;
+	position: absolute;
+	top: 13%;
+	/* background-color: #fff; */
+	width: 30%;
+	right: 5%;
+	font-family: product sans;
+	font-weight: 100;
+	color: grey;
+	font-size: 15px;
+}
+
+.b {
+	padding: 30px;
+	border-radius: 10px;
+	min-height: 30vh;
+	width: 70%;
+	background-color: #fff;
+	/* overflow: hidden; */
+	position: relative;
+}
+.btm {
+	height: 8vh;
+	width: 100%;
+	background-color: #fff;
+	border-top: 1px solid grey;
+	position: absolute;
+	bottom: 0%;
+	left: 0%;
+	padding: 10px;
+	font-size: 13px;
+}
+
+.k {
+	min-height: inherit;
+	padding-bottom: 40px;
+}
+
+.btm h2 {
+	margin-left: 35%;
+	color: gray;
+}
+
+#PeopleYouMayKnow {
+	margin-top: 60px;
+}
+
+button {
+	background-color: rgb(82, 82, 170);
+	color: white;
+	padding: 6px;
+	border-radius: 20px;
+	margin-bottom: 10px;
+}
+
+#PeopleYouMayKnow h3 {
+	margin-bottom: 20px;
+	color: blue;
+}
+
+.name {
+	color: black !important;
+}

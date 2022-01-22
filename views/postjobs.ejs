@@ -1,0 +1,147 @@
+<% include ./partials/header.ejs %>
+<style>
+	form input {
+		width: 100%;
+		margin-top: 20px;
+		outline: none;
+		border-radius: 20px;
+	}
+	
+	form input[type=submit] {
+		background-color: blue;
+		border: none;
+		color: #fff;
+		border-radius: 20px;
+	}
+	
+	input {
+		padding: 0 20px;
+	}
+	
+	select {
+		width: 100%;
+		margin-top: 20px;
+		outline: none;
+		border-radius: 20px;
+	}
+</style>
+<nav class="navbar navbar-expand-lg navbar-light ">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="#"><img src="../images/icon.jpg" alt=""></a>
+		<form class="d-flex">
+			<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-primary" type="submit">Search</button>
+		</form>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li id="marleft" class="nav-item d-flex flex-column align-items-center">
+					<a class="nav-link active" aria-current="page" href="#">
+						<div class="icon flex"><img class="img" style="opacity: 1;" src="../images/home.png" alt=""></div>
+						<div class="hometxt flex">Home</div>
+						<hr>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="/mynetwork">
+						<div class="icon connections flex"><img class="img" src="../images/connections.png" alt=""></div>
+						<div class="conntxt flex ">My Network</div>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link mrlft" aria-current="page" href="/jobs">
+						<div class="icon flex jobs"><img class="img" src="../images/jobs.png" alt=""></div>
+						<div class="hometxt flex ">Jobs</div>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="#">
+						<div class="icon msg flex"><img class="img" src="../images/msg.png" alt=""></div>
+						<div class="hometxt flex ">Messaging</div>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link notifications" aria-current="page" href="#">
+						<div class="icon notif flex"><img class="img" src="../images/notification.png" alt=""></div>
+						<div class="hometxt flex ">Notifications</div>
+					</a>
+				</li>
+				<div class="dropdown">
+					
+					<a href="" class="nav-link ">
+						<img id="me" class="img" src="../images/user.png" alt="default-pic">
+						<br>
+						Me
+					</a>
+					<div id="abs">
+						<div class="dropdown-content">
+							<a href="/profile">
+								<div id="profile">
+									<div id="dp"></div>
+									<div id="dets">
+										<h6>Name</h6>
+										<p>Headline</p>
+										<div class="btn rounded-pill" id="signinbtn">View Profile</div>
+									</div>
+								</div>
+							</a>
+							<hr>
+							<div id="scnd">
+								<h6>Account</h6>
+								<a href="">Settings & Privacy</a>
+								<a href="">Help</a>
+								<a href="">Language</a>
+								<a href="/logout" id="lh">Sign Out</a>
+							</div>
+							<hr>
+							<div id="third">
+								<h6>Manage</h6>
+								<a href="">Posts & Activity</a>
+								<a href="">Job Posting Account</a>
+							</div>
+							<hr>
+							
+						</div>
+					</div>
+				</div>
+			</ul>
+			
+		</div>
+	</div>
+</nav>
+<div id="main5" style="min-height: 100vh; width: 100%; border-top: 1px solid transparent">
+	<div id="jobsform" style=" width: 18rem; height:65vh;background-color: #f0ecec;margin-top: 140px; margin-left: 520px;border-radius: 30px;padding:0 20px;">
+		<h3 style="font-size: 20px; margin-left: 40px; color: rgb(37, 37, 218);">Create your job post</h3>
+		<form action="/postjob" method="post">
+			<input type="text" name="jobtitle" placeholder="enter job title">
+			<br>
+			<input type="text" name="jobdescription" placeholder="enter job description">
+			<div id="radio" style="display: flex; text-align: center;">
+				<input type="radio" name="jobmode" value="onsite" style="text-align: center;">onsite
+				<input type="radio" name="jobmode" value="remote" style="text-align: center;">remote
+			</div>
+			
+			<input type="text" name="joblocation" placeholder="enter job location">
+			<br>
+			<!-- <input type="text" name="jobtype" placeholder="enter job type"> -->
+			<select id="job" name="jobtype">
+				<option value="none">Selet job type</option>
+				<option value="IT and operations">IT and operations</option>
+				<option value="sales intern"> sales intern</option>
+				<option value="Industrial"> Industrial</option>
+				<option value="Hr and executive"> Hr and executive</option>
+			</select>
+			<br>
+			<input type="submit" value="Post">
+			
+		</form>
+	</div>
+	
+	
+	
+</div>
+
+
+
+
+
+<% include ./partials/footer.ejs %>
